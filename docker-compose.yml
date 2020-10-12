@@ -1,0 +1,18 @@
+version: '3'
+services:
+  minio:
+    image: minio/minio
+    ports:
+      - '9000:9000'
+    env_file:
+      - .env
+    volumes:
+      - ./.tmp_data:/data
+    command: ['server', '/data']
+  web:
+    image: nginx
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - '8080:80'
+    command: "nginx -g 'daemon off;'"

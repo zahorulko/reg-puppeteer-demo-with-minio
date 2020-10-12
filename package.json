@@ -1,0 +1,15 @@
+{
+  "name": "reg-puppeteer-demo-with-minio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mkdirp": "^1.0.4",
+    "puppeteer": "^5.3.1"
+  }
+}
