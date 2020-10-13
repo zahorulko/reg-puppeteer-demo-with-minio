@@ -15,11 +15,12 @@
     },
     "reg-publish-s3-plugin": {
       "bucketName": "static",
-      "customDomain": "82ba77059135.ngrok.io",       <- Your Nginx Domain
+      "customDomain": "3214428b6ffe.ngrok.io",
       "sdkOptions": {
-        "endpoint": "https://ec3741de9450.ngrok.io", <- Your Minio Endpoint
+        "endpoint": "https://bdf4a6b590c9.ngrok.io",
         "s3ForcePathStyle": true,
         "signatureVersion": "v4"
+      }
     }
   }
 }
