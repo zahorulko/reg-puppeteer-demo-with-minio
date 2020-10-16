@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c592cbe1-b73b-4e04-b669-8ddda3fa00be" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.circleci/config.yml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +45,7 @@
       <workItem from="1602499516056" duration="4861000" />
       <workItem from="1602578549776" duration="5929000" />
       <workItem from="1602841273899" duration="1803000" />
-      <workItem from="1602844080480" duration="711000" />
+      <workItem from="1602844080480" duration="1340000" />
     </task>
     <servers />
   </component>
