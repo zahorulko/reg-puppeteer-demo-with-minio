@@ -4,6 +4,10 @@ jobs:
     docker:
       - image: regviz/node-xcb
     working_directory: ~/repo
+    environment:
+      AWS_DEFAULT_REGION: us-east-1
+      AWS_PROFILE: datacamp-test
+      AWS_SDK_LOAD_CONFIG: "1"
     steps:
       - checkout
       # Download and cache dependencies
