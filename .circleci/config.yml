@@ -1,16 +1,19 @@
 version: 2
 jobs:
   build:
-    auth:
-      password: SuPeRaWeSoMeSeCrEtKeY
-      username: SUPERAWESOMEACCESSKEY
     docker:
       - image: regviz/node-xcb
     working_directory: ~/repo
     environment:
       AWS_DEFAULT_REGION: us-east-1
-      # AWS_SDK_LOAD_CONFIG: "1"
+      AWS_PROFILE: datacamp-test
+      AWS_SDK_LOAD_CONFIG: "1"
     steps:
+      - aws-cli/configure:
+          aws-access-key-id: $OPS_AWS_ACCESS_KEY_ID
+          aws-secret-access-key: $OPS_AWS_SECRET_ACCESS_KEY
+          aws-region: us-east-1
+          profile-name: datacamp-test
       - checkout
     # Download and cache dependencies
       - restore_cache:
