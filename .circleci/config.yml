@@ -1,12 +1,25 @@
 version: 2.1
+orbs:
+  aws-cli: circleci/aws-cli@0.1.4
+executors:
+  configure-aws:
+    steps:
+      - aws-cli/configure:
+          aws-access-key-id: $TF_VAR_STAGING_AWS_ACCESS_KEY_ID
+          aws-secret-access-key: $TF_VAR_STAGING_AWS_SECRET_ACCESS_KEY
+          aws-region: us-east-1
+          profile-name: datacamp-staging
+      - aws-cli/configure:
+          aws-access-key-id: $TF_VAR_PROD_AWS_ACCESS_KEY_ID
+          aws-secret-access-key: $TF_VAR_PROD_AWS_SECRET_ACCESS_KEY
+          aws-region: us-east-1
+          profile-name: datacamp-prod
 jobs:
   build:
     docker:
       - image: regviz/node-xcb
-        aws_access_key_id: $STAGING_AWS_ACCESS_KEY_ID
-        aws_secret_access_key: $STAGING_AWS_SECRET_ACCESS_KEY
 working_directory: ~/repo
-steps:
+  steps:
       - checkout
     # Download and cache dependencies
       - restore_cache:
