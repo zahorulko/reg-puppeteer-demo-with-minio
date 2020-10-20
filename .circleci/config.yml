@@ -1,43 +1,26 @@
----
-executors:
-  configure-aws:
-    steps:
-      -
-        aws-cli/configure:
-          aws-access-key-id: $TF_VAR_STAGING_AWS_ACCESS_KEY_ID
-          aws-region: us-east-1
-          aws-secret-access-key: $TF_VAR_STAGING_AWS_SECRET_ACCESS_KEY
-          profile-name: datacamp-staging
-      -
-        aws-cli/configure:
-          aws-access-key-id: $TF_VAR_PROD_AWS_ACCESS_KEY_ID
-          aws-region: us-east-1
-          aws-secret-access-key: $TF_VAR_PROD_AWS_SECRET_ACCESS_KEY
-          profile-name: datacamp-prod
+version: 2
 jobs:
   build:
     docker:
-      -
-        image: regviz/node-xcb
-orbs:
-  aws-cli: circleci/aws-cli@0.1.4
-steps:
-  - checkout
-  -
-    restore_cache:
-      keys:
-        - "v1-dependencies-{{ checksum \"package.json\" }}"
-        - v1-dependencies-
-  -
-    run: "npm install"
-  -
-    save_cache:
-      key: "v1-dependencies-{{ checksum \"package.json\" }}"
-      paths:
-        - node_modules
-  -
-    run: "npm test"
-  -
-    run: "npm run reg-suit"
-version: 2.1
-working_directory: ~/repo
+      - image: regviz/node-xcb
+    working_directory: ~/repo
+    environment:
+      AWS_DEFAULT_REGION: us-east-1
+      AWS_PROFILE: datacamp-test
+      AWS_SDK_LOAD_CONFIG: "1"
+    steps:
+      - checkout
+    # Download and cache dependencies
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+      - run: npm install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+      # run tests!
+      - run: npm test
+      - run: npm run reg-suit
