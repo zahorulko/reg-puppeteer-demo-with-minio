@@ -20,7 +20,11 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-
+    jobs:
+      test:
+        executor: << parameters.executor >>
+        environment:
+          AWS_SDK_LOAD_CONFIG: "1"
       # run tests!
       - run: npm test
       - run: npm run reg-suit
