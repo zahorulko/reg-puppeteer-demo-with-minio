@@ -1,14 +1,11 @@
 version: 2
 jobs:
-  environment:
-    AWS_SDK_LOAD_CONFIG: "1"
   build:
     docker:
       - image: regviz/node-xcb
     working_directory: ~/repo
-    auth:
-      username: SUPERAWESOMEACCESSKEY
-      password: SuPeRaWeSoMeSeCrEtKeY
+    environment:
+      AWS_SDK_LOAD_CONFIG: "1"
     steps:
       - checkout
     # Download and cache dependencies
