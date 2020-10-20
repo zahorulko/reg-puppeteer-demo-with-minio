@@ -12,6 +12,8 @@ jobs:
     docker:
       - image: regviz/node-xcb
     working_directory: ~/repo
+    environment:
+
       - checkout
     # Download and cache dependencies
       - restore_cache:
