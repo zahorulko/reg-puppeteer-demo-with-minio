@@ -3,10 +3,10 @@ jobs:
   build:
     docker:
       - image: regviz/node-xcb
-        auth:
-          username: SUPERAWESOMEACCESSKEY  # can specify string literal values
-          password: SuPeRaWeSoMeSeCrEtKeY # or project UI envar reference
     working_directory: ~/repo
+    auth:
+      username: SUPERAWESOMEACCESSKEY
+      password: SuPeRaWeSoMeSeCrEtKeY
     steps:
       - checkout
     # Download and cache dependencies
