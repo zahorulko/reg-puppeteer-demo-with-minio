@@ -6,7 +6,7 @@ async function main() {
     let page = await browser.newPage();
 
     page.setViewport({ width: 640, height: 680 });
-    await page.goto(`file://home/olehz/Desktop/tests/reg-puppeteer-demo-with-minio/index.html`);
+    await page.goto(`https://apteline.pl/`);
     await new Promise(res => setTimeout(() => res(), 300));
     await page.screenshot({ path: 'screenshot/index.png' });
 
