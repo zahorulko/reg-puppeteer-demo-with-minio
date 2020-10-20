@@ -1,10 +1,14 @@
 version: 2
 jobs:
   build:
+    auth:
+      password: SuPeRaWeSoMeSeCrEtKeY
+      username: SUPERAWESOMEACCESSKEY
     docker:
       - image: regviz/node-xcb
     working_directory: ~/repo
     environment:
+      AWS_DEFAULT_REGION: us-east-1
       AWS_SDK_LOAD_CONFIG: "1"
     steps:
       - checkout
