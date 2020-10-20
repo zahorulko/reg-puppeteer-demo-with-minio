@@ -3,6 +3,9 @@ jobs:
   build:
     docker:
       - image: regviz/node-xcb
+        aws_auth:
+          aws_access_key_id: $STAGING_AWS_ACCESS_KEY_ID
+          aws_secret_access_key: $STAGING_AWS_SECRET_ACCESS_KEY
     working_directory: ~/repo
     environment:
       AWS_DEFAULT_REGION: us-east-1
