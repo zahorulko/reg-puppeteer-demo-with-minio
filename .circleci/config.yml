@@ -1,8 +1,11 @@
-version: 2
+version: 2.1
 jobs:
   build:
     docker:
       - image: regviz/node-xcb
+        auth:
+          username: MINIO_ACCESS_KEY
+          password: MINIO_SECRET_KEY
     working_directory: ~/repo
     environment:
       AWS_DEFAULT_REGION: us-east-1
