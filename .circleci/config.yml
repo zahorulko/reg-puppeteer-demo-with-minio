@@ -9,7 +9,7 @@ jobs:
     working_directory: ~/repo
     environment:
       AWS_DEFAULT_REGION: us-east-1
-      AWS_SDK_LOAD_CONFIG: "1"
+      # AWS_SDK_LOAD_CONFIG: "1"
     steps:
       - checkout
     # Download and cache dependencies
