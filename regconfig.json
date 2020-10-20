@@ -15,9 +15,9 @@
     },
     "reg-publish-s3-plugin": {
       "bucketName": "static",
-      "customDomain": "3214428b6ffe.ngrok.io",
+      "customDomain": "650cccbae1df.ngrok.io",
       "sdkOptions": {
-        "endpoint": "https://bdf4a6b590c9.ngrok.io",
+        "endpoint": "https://8031d7e6f770.ngrok.io",
         "s3ForcePathStyle": true,
         "signatureVersion": "v4"
       }
