@@ -3,10 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "node capture.js",
-    "reg-suit": "reg-suit run"
-  },
   "author": "",
   "license": "ISC",
   "devDependencies": {
@@ -16,5 +12,9 @@
     "reg-notify-github-plugin": "^0.10.7",
     "reg-publish-s3-plugin": "^0.10.7",
     "reg-suit": "^0.10.7"
+  },
+  "scripts": {
+    "test": "node capture.js",
+    "reg-suit": "reg-suit run"
   }
 }
